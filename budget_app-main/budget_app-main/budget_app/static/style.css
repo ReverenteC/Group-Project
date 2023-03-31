@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body1 {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: -webkit-linear-gradient(left, #a0b0ac, #458eb2);
+}
+
+.body2 {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #a0b0ac, #458eb2);
+    padding: 15px;
+}
+
+.body3{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #a0b0ac, #458eb2);
+}
+
+::selection {
+    background: #94a7ae;
+    color: #fff;
+}
+
+.title1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.title2 {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+}
+
+.title3{
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 20px;
+}
+
+.title4 {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    margin-left:  30px;
+    padding-top: 20px;
+}
+
+table{
+    overflow: hidden;
+}
+td{
+    width:500px;
+    padding-left: 20px;
+}
+
+.create1{
+    padding-left: 10px;
+    color: rgb(70, 95, 81);
+    text-decoration: none;
+}
+.create2{
+    font-size: small;
+    color: rgb(144, 170, 191);
+    overflow:hidden;
+}
+
+.button{
+    text-decoration: none;
+    color: #458eb2;
+}
+
+.corner{
+    border-radius: 20px;
+}
+.box{
+    margin-left: 300px;
+}
+.form{
+    width: 40%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.updatebutton{
+    background-color: #458eb2;
+    border-radius: 5px;
+    width: 60px;
+    height: 25px;
+    color: white;
+    border: transparent;
+    margin-left: 75px;
+    position: inherit;
+}
+
+.input{
+    border-radius: 10px;
+    height: 30px;
+}
+
+.comment{
+    border-radius: 10px;
+    background-color: #eee;
+    border: transparent;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.comment1{
+    float:left;
+    color: #444;
+}
+.comment2{
+    float:right;
+}
+.comment1, .comment2{
+    display: inline;
+}
+.comments{
+    border-radius: 10px;
+    background-color: #eee;
+    border: transparent;
+    margin-top: 10px;
+    padding: 5px;
+    overflow-y: scroll;
+    color: #444;
+}
+
+.button2{
+    margin-left: 5px;
+    width: 60x;
+    font-size: small;
+    color: #444;
+
+}
+
+.wrapper {
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title-text {
+    display: flex;
+    width: 200%;
+}
+
+.wrapper .title {
+    width: 50%;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .slide-controls {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.slide-controls .slide {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+}
+
+.slide-controls label.signup {
+    color: #000;
+}
+
+.slide-controls .slider-tab {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left, #a0b0ac, #458eb2);
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#signup:checked~.slider-tab {
+    left: 50%;
+}
+
+#signup:checked~label.signup {
+    color: #fff;
+    cursor: default;
+    user-select: none;
+}
+
+#signup:checked~label.login {
+    color: #000;
+}
+
+#login:checked~label.signup {
+    color: #000;
+}
+
+#login:checked~label.login {
+    cursor: default;
+    user-select: none;
+}
+
+.wrapper .form-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-container .form-inner {
+    display: flex;
+    width: 200%;
+}
+
+.form-container .form-inner form {
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-inner form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-inner form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.form-inner form .field input:focus {
+    border-color: #83bffc;
+    /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+
+.form-inner form .field input::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+form .field input:focus::placeholder {
+    color: #b3b3b3;
+}
+
+.form-inner form .pass-link {
+    margin-top: 5px;
+}
+
+.form-inner form .signup-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: #458eb2;
+    text-decoration: none;
+}
+
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+form .btn {
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+form .btn .btn-layer {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right, #458eb2, #a0b0ac, #458eb2, #a0b0ac);
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    ;
+}
+
+form .btn:hover .btn-layer {
+    left: 0;
+}
+
+form .btn input[type="submit"] {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-top: 10px;
+    margin-bottom:3px
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    overflow: hidden;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+a.logout{
+    text-align: right;
+    float: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}

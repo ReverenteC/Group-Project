@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Edit</title>
+</head>
+
+<body class="body3">
+    <div class="flex-container">
+        <div>
+            <a class="logout" href="/dashboard">Back to Home</a>
+            <a class="logout" href="/logout">Log Out</a>
+        </div>
+        <h1 class="title4">Edit </h1>
+    </div>
+    <div class=" text-center ">
+        {% with messages = get_flashed_messages() %}     
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p>                   
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+        
+    <div>
+        <form action="/user/{{user.id}}/info/update" method="POST" class="box">
+            <div>
+                <div class="form">
+                    <label for="email">email:</label>
+                    <input type="text" name="email" class="input" id="email" value="{{user.email}}">
+                </div>
+                <div class="form">
+                    <label for="first_name">First name:</label>
+                    <input type="text" name="first_name" class="input" id="first_name" value="{{user.first_name}}">
+                </div>          
+                <div class="form">
+                    <label for="last_name">Last name:</label>
+                    <input type="text" name="last_name" class="input" id="last_name" value="{{user.last_name}}">
+                </div>
+            </div>
+            <input class="updatebutton" type="submit" class="btn-primary" value="Update">
+        </form>
+    </div>
+</body>
+
+</html>

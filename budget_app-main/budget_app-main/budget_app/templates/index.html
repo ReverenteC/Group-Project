@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="body1">
+    <p class="title1">Let's go Budget!!</p>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login">
+                Login
+            </div>
+            <div class="title signup">
+                Sign up
+            </div>
+        </div>
+        <div class=" text-center ">
+            {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Sign up</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="/create" class="login" method="POST">
+                    <input type="hidden" name='action' value="login">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">
+                        Not a member? <a href="">Sign up now</a>
+                    </div>
+                </form>
+                <form action="/create" class="signup" method= "POST">
+                    <input type="hidden" name='action' value="register">
+                    <div class="field">
+                        <input type="text" placeholder="First name" name="first_name" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Last name" name="last_name" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" name ="password"required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm password" name="confirm" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Sign up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+</body>
+
+</html>

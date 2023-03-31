@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+
+<body class="body3">
+    <div >
+        <div class="nav">
+            <a class="logout" href="/dashboard">Back to Home</a>
+            <a class="logout" href="/logout">Log Out</a>
+        </div>
+        <h1 class="title4">Add New Expense</h1>
+    </div>
+    <form action="/expenses/newbill/create" method="POST" class="box">
+        <div>
+            <div class="form">
+                <label>Expense:</label>
+                <input type="text" name="bill_type" class="input" id="bill_type">
+            </div>
+            <div>
+                <input class="updatebutton" type="submit" class="btn-primary" value="Add">
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
